@@ -105,6 +105,71 @@ body {
   font-weight: 800;
 }
 
+.main-grid {
+  display: flex;
+  gap: 2.5rem;
+}
+
+.left-col {
+  flex: 1;
+}
+
+.alerts-panel {
+  width: 320px;
+  background: var(--card);
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  flex-direction: column;
+}
+
+.panel-header {
+  padding: 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #f59e0b;
+}
+
+.alerts-list {
+  padding: 1rem;
+}
+
+.alert-item {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.02);
+  margin-bottom: 0.8rem;
+  align-items: center;
+}
+
+.alert-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.alert-item.warning .alert-dot { background: #f59e0b; box-shadow: 0 0 10px #f59e0b; }
+.alert-item.error .alert-dot { background: #ef4444; box-shadow: 0 0 10px #ef4444; }
+
+.alert-msg {
+  font-size: 0.85rem;
+  font-weight: 500;
+  margin-bottom: 0.2rem;
+}
+
+.alert-time {
+  font-size: 0.7rem;
+  opacity: 0.4;
+}
+
 .chart-wrapper {
   background: var(--card);
   padding: 2rem;
