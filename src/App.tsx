@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, AreaChart, Area } from 'recharts';
-import { Activity, Zap, Shield, Globe } from 'lucide-react';
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, AreaChart, Area, BarChart, Bar, Cell } from 'recharts';
+import { Activity, Zap, Shield, Globe, Cpu } from 'lucide-react';
 import './App.css';
 
 const generateData = () => {
@@ -10,6 +10,13 @@ const generateData = () => {
     latency: Math.floor(Math.random() * 30) + 10
   }));
 };
+
+const resourceData = [
+  { name: 'Compute', value: 45, color: '#00f2fe' },
+  { name: 'Storage', value: 72, color: '#4facfe' },
+  { name: 'Memory', value: 58, color: '#10b981' },
+  { name: 'Network', value: 33, color: '#f59e0b' },
+];
 
 function App() {
   const [data, setData] = useState(generateData());
@@ -35,6 +42,7 @@ function App() {
         <nav>
           <div className="nav-item active"><Activity size={20} /> Dashboard</div>
           <div className="nav-item"><Zap size={20} /> Real-time</div>
+          <div className="nav-item"><Cpu size={20} /> Resources</div>
           <div className="nav-item"><Shield size={20} /> Security</div>
           <div className="nav-item"><Globe size={20} /> Global</div>
         </nav>
@@ -59,12 +67,16 @@ function App() {
             <span className="label">ACTIVE NODES</span>
             <span className="value">1,024</span>
           </div>
+          <div className="stat-card">
+            <span className="label">CONNS / SEC</span>
+            <span className="value">4.8k</span>
+          </div>
         </div>
 
-        <div className="charts-container">
+        <div className="charts-grid">
           <div className="chart-wrapper">
-            <h3>Data Throughput (Live)</h3>
-            <ResponsiveContainer width="100%" height={300}>
+            <h3>Data Throughput (Live Pulse)</h3>
+            <ResponsiveContainer width="100%" height={250}>
               <AreaChart data={data}>
                 <defs>
                   <linearGradient id="colorValue" x1="0" y1="0" x2="0" y2="1">
@@ -78,6 +90,23 @@ function App() {
                 <Tooltip contentStyle={{ backgroundColor: '#0f172a', border: 'none' }} />
                 <Area type="monotone" dataKey="value" stroke="#00f2fe" fillOpacity={1} fill="url(#colorValue)" />
               </AreaChart>
+            </ResponsiveContainer>
+          </div>
+
+          <div className="chart-wrapper">
+            <h3>Resource Allocation (%)</h3>
+            <ResponsiveContainer width="100%" height={250}>
+              <BarChart data={resourceData}>
+                <CartesianGrid strokeDasharray="3 3" stroke="#ffffff10" vertical={false} />
+                <XAxis dataKey="name" axisLine={false} tickLine={false} tick={{fill: '#ffffff60', fontSize: 12}} />
+                <YAxis hide domain={[0, 100]} />
+                <Tooltip contentStyle={{ backgroundColor: '#0f172a', border: 'none' }} />
+                <Bar dataKey="value" radius={[4, 4, 0, 0]}>
+                  {resourceData.map((entry, index) => (
+                    <Cell key={`cell-${index}`} fill={entry.color} />
+                  ))}
+                </Bar>
+              </BarChart>
             </ResponsiveContainer>
           </div>
         </div>
