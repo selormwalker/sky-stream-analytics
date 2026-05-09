@@ -17,9 +17,10 @@ jobs:
         run: echo "Last active: $(date)" > ACTIVITY.md
       - name: Commit and Push
         run: |
-          git config --global user.name "Selorm Walker"
-          git config --global user.email "selormwalker@example.com"
+          git config --global user.name "selormwalker"
+          git config --global user.email "juniorkwamewalker@gmail.com"
           git add ACTIVITY.md
           git commit -m "chore: autonomous activity update [skip ci]" || echo "No changes"
           git push
+
 
