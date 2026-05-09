@@ -1,0 +1,24 @@
+name: Daily Activity
+
+on:
+  schedule:
+    - cron: '0 */2 * * *'
+  workflow_dispatch:
+
+jobs:
+  update-activity:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Update ACTIVITY.md
+        run: echo "Last active: $(date)" > ACTIVITY.md
+      - name: Commit and Push
+        run: |
+          git config --global user.name "GitHub Action"
+          git config --global user.email "action@github.com"
+          git add ACTIVITY.md
+          git commit -m "chore: autonomous activity update [skip ci]" || echo "No changes"
+          git push
