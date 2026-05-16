@@ -228,3 +228,6 @@ ACTIVITY: Streamlined the database persistence layer for faster read/write opera
 TIMESTAMP: Sat May 16 05:40:52 UTC 2026
 ACTIVITY: Identified and resolved a critical memory bottleneck in the background service.
 ---
+TIMESTAMP: Sat May 16 07:55:58 UTC 2026
+ACTIVITY: Updated the technical architecture docs to reflect recent infrastructure changes.
+---
