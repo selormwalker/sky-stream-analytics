@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, AreaChart, Area, BarChart, Bar, Cell } from 'recharts';
+import { useState, useEffect } from 'react';
+import { AreaChart, Area, BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 import { Activity, Zap, Shield, Globe, Cpu, AlertTriangle } from 'lucide-react';
 import './App.css';
 
@@ -20,7 +20,7 @@ const resourceData = [
 
 function App() {
   const [data, setData] = useState(generateData());
-  const [alerts, setAlerts] = useState([
+  const [alerts] = useState([
     { id: 1, type: 'warning', msg: 'Latency spike on Node-04', time: '2m ago' },
     { id: 2, type: 'error', msg: 'Auth Service timeout', time: '5m ago' }
   ]);
