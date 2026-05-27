@@ -615,3 +615,6 @@ ACTIVITY: Strengthened the underlying encryption layers with industry-standard p
 TIMESTAMP: Wed May 27 22:28:33 UTC 2026
 ACTIVITY: Enhanced the visual polish of the CLI output for a better developer experience.
 ---
+TIMESTAMP: Wed May 27 23:46:26 UTC 2026
+ACTIVITY: Updated the technical architecture docs to reflect recent infrastructure changes.
+---
