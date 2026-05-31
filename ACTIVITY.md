@@ -720,3 +720,6 @@ ACTIVITY: Synchronized internal modules with the latest global security standard
 TIMESTAMP: Sun May 31 11:18:28 UTC 2026
 ACTIVITY: Enhanced the visual polish of the CLI output for a better developer experience.
 ---
+TIMESTAMP: Sun May 31 12:52:34 UTC 2026
+ACTIVITY: Updated the technical architecture docs to reflect recent infrastructure changes.
+---
