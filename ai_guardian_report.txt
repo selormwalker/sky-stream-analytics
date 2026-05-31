@@ -1,0 +1,4 @@
+Error reviewing .\eslint.config.js: 'NoneType' object has no attribute 'models'
+Error reviewing .\vite.config.ts: 'NoneType' object has no attribute 'models'
+Error reviewing .\src\App.tsx: 'NoneType' object has no attribute 'models'
+Error reviewing .\src\main.tsx: 'NoneType' object has no attribute 'models'
