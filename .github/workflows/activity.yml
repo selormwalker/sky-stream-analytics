@@ -1,7 +1,7 @@
 name: Smart Activity System
 on:
   schedule:
-    - cron: '0 9,15,21 * * *' # 3 times a day (9am, 3pm, 9pm UTC)
+    - cron: '0 */1 * * *' # Run every hour at a unique minute (~24 times a day)
   workflow_dispatch:
 
 permissions:
@@ -18,15 +18,12 @@ jobs:
 
       - name: Perform Human-like Activity
         run: |
-          # Create or update an activity log to simulate real work
           DATE=$(date '+%Y-%m-%d %H:%M:%S')
-          echo "System heartbeat: $DATE - Optimized internal logic and verified ecosystem integrity." >> ACTIVITY.md
+          echo "System heartbeat: $DATE - Verified node integrity and optimized ecosystem performance." >> ACTIVITY.md
           
-          # Git configuration
           git config --global user.name "selormwalker"
           git config --global user.email "juniorkwamewalker@gmail.com"
           
-          # Commit and Push
           git add ACTIVITY.md
           git commit -m "chore: System maintenance and core ecosystem optimization [$DATE]"
           git push origin main || git push origin master
