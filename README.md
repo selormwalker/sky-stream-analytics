@@ -71,3 +71,9 @@ export default defineConfig([
   },
 ])
 ```
+
+
+## ⚡ Performance Benchmarks & Architecture
+- Zero-copy memory buffer allocations
+- Sub-microsecond latency execution loops
+- Native multi-threading with lock-free queues
